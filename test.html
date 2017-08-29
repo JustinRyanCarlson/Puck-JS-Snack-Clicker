@@ -56,7 +56,7 @@
           setTimeout(function() {
             // Now tell it to write data on the current light level to Bluetooth
             // 10 times a second
-            connection.write("setInterval(function() {if (digitalRead(BTN)) Bluetooth.println('yyuuupppp!!!!');}, 200);",
+            connection.write("setInterval(function() {\nif (digitalRead(BTN)) Bluetooth.println('click');\n}, 1000);\n",
               function() { console.log("Ready..."); });
           }, 1500);
         });
