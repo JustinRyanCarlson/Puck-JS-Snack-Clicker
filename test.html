@@ -36,8 +36,8 @@
         // Handle the data we get back, and call 'onLine'
         // whenever we get a line
         var buf = "";
-        connection.on("data", function(d) {
-            console.log("Received: "+ JSON.stringify(d));
+        connection.on("data", function(data) {
+            console.log(data);
         });
         // First, reset Puck.js
         connection.write("reset();\n", function() {
