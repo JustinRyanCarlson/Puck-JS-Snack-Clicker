@@ -44,24 +44,8 @@
         });
         // First, reset Puck.js
         connection.write("reset();\n", function() {
-          // Wait for it to reset itself
-          setTimeout(function() {
-            // Now tell it to write data on the current light level to Bluetooth
-            // 10 times a second
-            connection.write("function flash() {
-              digitalWrite(LED1,1);
-              setTimeout(function() { 
-               digitalWrite(LED1,0);
-              }, 20000);
-              }
-
-              if (digitalRead(BTN)) flash();
-
-              setInterval(function() {
-                if (digitalRead(BTN)) flash();
-              }, 500);",
+            connection.write("function flash() {digitalWrite(LED1,1);\nsetTimeout(function() {\ndigitalWrite(LED1,0);\n}, 20000);\n}\nif (digitalRead(BTN)) flash();\nsetInterval(function() {\nif (digitalRead(BTN)) flash();\n}, 500);",
               function() { console.log("Ready..."); });
-          }, 1500);
         });
       });
     });
