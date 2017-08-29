@@ -20,11 +20,6 @@
     // Make sure your mouse cursor turns into a hand when over it, and gray it out
     path.style="cursor:pointer;fill:#BBB";
 
-    // Called when we get a line of data - updates the light color
-    function onLine(v) {
-      console.log("Received: "+JSON.stringify(v));
-    }
-
     // When clicked, connect or disconnect
     var connection;
     path.addEventListener("click", function() {
@@ -42,13 +37,7 @@
         // whenever we get a line
         var buf = "";
         connection.on("data", function(d) {
-          buf += d;
-          var i = buf.indexOf("\n");
-          while (i>=0) {
-            onLine(buf.substr(0,i));
-            buf = buf.substr(i+1);
-            i = buf.indexOf("\n");
-          }
+            console.log("Received: "+ d);
         });
         // First, reset Puck.js
         connection.write("reset();\n", function() {
@@ -56,7 +45,7 @@
           setTimeout(function() {
             // Now tell it to write data on the current light level to Bluetooth
             // 10 times a second
-            connection.write("setInterval(function() {\nif (digitalRead(BTN)) Bluetooth.println('click');\n}, 1000);\n",
+            connection.write("setInterval(function() {\nif (digitalRead(BTN)) Bluetooth.println('click');\n}, 200);\n",
               function() { console.log("Ready..."); });
           }, 1500);
         });
