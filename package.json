@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/JustinRyanCarlson/Puck-JS-Snack-Clicker#readme",
   "dependencies": {
-    "noble": "^1.8.1"
+    "espruino": "0.0.33",
+    "noble": "^1.8.1",
+    "slackbots": "^1.0.2"
   }
 }
