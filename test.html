@@ -22,16 +22,14 @@
 
     // Called when we get a line of data - updates the light color
     function onLine(v) {
-      console.log("Received: "+JSON.stringify(v));
-      path.style.fill="rgb("+Math.round(v*255)+",0,0)";
+      console.log("Clicked");
     }
 
     // When clicked, connect or disconnect
     var connection;
     path.addEventListener("click", function() {
       if (connection) {
-        connection.close();
-        connection = undefined;
+        console.log("clicked");
       }
       Puck.connect(function(c) {
         if (!c) {
