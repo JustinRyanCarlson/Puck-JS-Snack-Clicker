@@ -27,6 +27,6 @@ bot.on('start', function() {
     bot.postMessageToGroup('private_group', 'meow!', params); 
 });
 
-require('espruino').expr('/dev/ttyACM0', 'E.getTemperature()', function(temp) {
+require('espruino').expr('/dev/cu.Bluetooth-Incoming-Port', 'E.getTemperature()', function(temp) {
         console.log('Current temperature is '+temp);
 });
