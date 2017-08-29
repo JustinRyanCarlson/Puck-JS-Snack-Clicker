@@ -1,3 +1,5 @@
+console.log("------------ INSIDE PUCK.JS ---------- ");
+
 var SlackBot = require('slackbots');
  
 // Create bot 
