@@ -7,8 +7,8 @@ app.use(express.static(path.join(__dirname, 'static_files')));
 
 // Create bot 
 var bot = new SlackBot({
-    token: 'xoxb-233947548631-smdF2VZy6hSjtbbF0cDL2GLG', 
-    name: "Mr. Snacks"
+    token: 'xoxb-233947548631-yKcq5eWOOr5CEjBFFslZBi0V', 
+    name: "Snacky Snackerton"
 });
 
 // more information about additional params https://api.slack.com/methods/chat.postMessage 
@@ -34,6 +34,14 @@ app.get("/snack", function(req, res) {
         
         // define existing username instead of 'user_name' 
         bot.postMessageToUser('justin.carlson', 'Snack notifications sent successfully', params); 
+
+        res.status(200).send("success");
+})
+
+app.get("/battery", function(req, res) {        
+        // define existing username instead of 'user_name' 
+        bot.postMessageToUser('justin.carlson', 'Puck battery low', params); 
+        bot.postMessageToUser('tristanmarshall', 'Puck battery low', params); 
 
         res.status(200).send("success");
 })
