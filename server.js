@@ -38,6 +38,14 @@ app.get("/snack", function(req, res) {
         res.status(200).send("success");
 })
 
+app.get("/battery", function(req, res) {        
+        // define existing username instead of 'user_name' 
+        bot.postMessageToUser('justin.carlson', 'Puck battery low', params); 
+        bot.postMessageToUser('tristanmarshall', 'Puck battery low', params); 
+
+        res.status(200).send("success");
+})
+
 // bind the app to listen for connections on a specified port
 var port = process.env.PORT || 8080;
 app.listen(port);
