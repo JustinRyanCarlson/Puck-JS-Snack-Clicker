@@ -4,7 +4,7 @@ var SlackBot = require('slackbots');
  
 // Create bot 
 var bot = new SlackBot({
-    token: 'xoxb-233947548631-mKxOdJpjKATyoJpzItYSLjfJ', 
+    token: 'xoxb-233947548631-wxkOp6HAn4MS88iOV27sISdl', 
     name: "Snacky Snackerton"
 });
  
