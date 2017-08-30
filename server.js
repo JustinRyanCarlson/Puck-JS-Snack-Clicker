@@ -10,7 +10,7 @@ var bot = new SlackBot({
 
 // Set up a URL route
 app.get("/", function(req, res) {
- res.sendFile("test.html");
+ res.sendFile(path.join(__dirname + '/test.html'));
 });
 
 app.get("/snack", function(req, res) {
