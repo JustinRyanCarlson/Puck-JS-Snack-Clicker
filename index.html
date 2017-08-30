@@ -55,7 +55,6 @@
         height: 180px;
         width: 180px;
         border-radius: 50%;
-        border: 8px solid #f7f7f7;
         font-size: 26px;
         line-height: 1.6;
         font-weight: 700;
@@ -68,6 +67,10 @@
         border: 8px solid #f47e21;
         color: #004D40;
         box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);      
+      }
+
+      .defaultBorderClass {
+        border: 8px solid #f7f7f7;
       }
 
       .standardClass {
@@ -94,7 +97,7 @@
     <h3>Click the connect button below to connect to the Puck.js button - Once connected, if the puck.js button is clicked, a snack refill slack notification will be sent to all DialogTech employees.</h3>
     <hr>
     <div class="buttonContainer">
-      <button id="buttonId" class="standardClass">CONNECT</button>
+      <button id="buttonId" class="standardClass defaultBorderClass">CONNECT</button>
     </div>
     <hr>
   </div>
@@ -137,10 +140,13 @@
 
               if (data == 1) {
                 console.log("condition met!");
+                button.classList.remove('defaultBorderClass');
                 button.classList.add('clickClass');
                 setTimeout(function() {
                   button.classList.remove('clickClass');
-                }, 500);
+                  button.classList.add('defaultBorderClass');
+                  
+                }, 300);
                 
                 $.get("/snack", function() {
                   console.log("/snacks attempted!");
