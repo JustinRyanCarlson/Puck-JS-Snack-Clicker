@@ -80,10 +80,10 @@
         color: white;
       }
 
-      .failureClass {
-        background-color: red;
-        color: white;
+      .clickClass {
+        border: 8px solid #f47e21;        
       }
+
    </style>
 
  </head>
@@ -137,6 +137,10 @@
 
               if (data == 1) {
                 console.log("condition met!");
+                button.classList.add('clickClass');
+                setTimeout(function() {
+                  button.classList.remove('clickClass');
+                }, 500);
                 
                 $.get("/snack", function() {
                   console.log("/snacks attempted!");
