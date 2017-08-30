@@ -40,7 +40,7 @@ app.get("/snack", function(req, res) {
 
 app.get("/battery", function(req, res) {        
         // define existing username instead of 'user_name' 
-        bot.postMessageToUser('justin.carlson', 'Puck battery low', params); 
+        bot.postMessageToUser('justin.carlson', ':battery: Puck battery low :battery:', params); 
         bot.postMessageToUser('tristanmarshall', 'Puck battery low', params); 
 
         res.status(200).send("success");
