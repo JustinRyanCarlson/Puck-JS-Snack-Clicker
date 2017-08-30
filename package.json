@@ -19,7 +19,6 @@
   "dependencies": {
     "espruino": "0.0.33",
     "express": "^4.15.4",
-    "noble": "^1.8.1",
     "path": "^0.12.7",
     "slackbots": "^1.0.2"
   }

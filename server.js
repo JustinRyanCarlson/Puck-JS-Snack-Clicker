@@ -3,6 +3,8 @@ var app = express();
 var path = require("path");
 var SlackBot = require('slackbots');
 
+app.use(express.static(path.join(__dirname, 'images')));
+
 // Create bot 
 var bot = new SlackBot({
     token: 'xoxb-233947548631-0VKMbPBTiUpOIt0clnzsEjUA', 
@@ -16,7 +18,7 @@ var params = {
 
 // Set up a URL route
 app.get("/", function(req, res) {
- res.sendFile(path.join(__dirname + '/test.html'));
+ res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.get("/snack", function(req, res) {
