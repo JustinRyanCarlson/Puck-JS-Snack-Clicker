@@ -3,7 +3,7 @@ var app = express();
 var path = require("path");
 var SlackBot = require('slackbots');
 
-app.use(express.static(path.join(__dirname, 'images')));
+app.use(express.static(path.join(__dirname, 'static_files')));
 
 // Create bot 
 var bot = new SlackBot({
