@@ -2,7 +2,7 @@
   "name": "puck-js-snack-clicker",
   "version": "1.0.0",
   "description": "",
-  "main": "puck.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,7 +18,9 @@
   "homepage": "https://github.com/JustinRyanCarlson/Puck-JS-Snack-Clicker#readme",
   "dependencies": {
     "espruino": "0.0.33",
+    "express": "^4.15.4",
     "noble": "^1.8.1",
+    "path": "^0.12.7",
     "slackbots": "^1.0.2"
   }
 }
