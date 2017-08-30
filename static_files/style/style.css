@@ -1,7 +1,7 @@
 body { 
     margin: 100px;
     margin-top: 100px;
-    background-color: #006064;  
+    background: linear-gradient(45deg, rgba(0,77,64,1) 0%, rgba(0,137,123,1) 50%, rgba(38,166,154,1) 100%); 
 }
 
 .container {
@@ -32,7 +32,7 @@ h3 {
 hr {
     border: none;
     padding-bottom: 1px;
-    background-color: rgba(0, 0, 0, 0.27);
+    background: linear-gradient(91deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 4%, rgba(0, 0, 0, 0.27) 28%, rgba(0, 0, 0, 0.27) 73%, rgba(255,255,255,1) 97%, rgba(255,255,255,1) 100%);
     max-width: 300px;
     margin-bottom: 30px;
     margin-top: 30px;
@@ -42,6 +42,7 @@ hr {
     width: 100%;
     margin: 0 auto;
     text-align: center;
+    border-radius: 5px;
 }
 
 #buttonId {
@@ -59,7 +60,6 @@ hr {
 
 #buttonId:hover {
     border: 8px solid #f47e21;
-    color: #004D40;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);      
 }
 
@@ -73,7 +73,7 @@ hr {
 }
 
 .successClass {
-    background-color: #009688;
+    background: linear-gradient(45deg, rgba(0,77,64,1) 0%, rgba(0,137,123,1) 50%, rgba(38,166,154,1) 100%);
     color: white;
 }
 
