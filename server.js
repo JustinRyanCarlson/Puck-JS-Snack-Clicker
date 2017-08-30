@@ -13,7 +13,7 @@ var bot = new SlackBot({
 
 // more information about additional params https://api.slack.com/methods/chat.postMessage 
 var params = {
-    icon_emoji: ':popcorn:'
+    icon_emoji: ':dt:'
 };
 
 // Set up a URL route
