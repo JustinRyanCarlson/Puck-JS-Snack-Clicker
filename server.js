@@ -21,7 +21,12 @@ app.get("/", function(req, res) {
  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-var slackMessage = ":green_apple::pear::banana::peach::apple::banana::banana::banana::banana::tada::the_horns::sunglasses::the_horns::tada::banana::banana::banana::banana::apple::peach::banana::pear::green_apple:\n\n:green_apple::pear::banana::peach::apple: The Snacks have arrived in Stotters House! :apple::peach::banana::pear::green_apple:\n\n:green_apple::pear::banana::peach::apple::banana::banana::banana::banana::tada::the_horns::sunglasses::the_horns::tada::banana::banana::banana::banana::apple::peach::banana::pear::green_apple:"
+var slackMessage = ":green_apple::pear::banana::peach::apple::banana::banana::banana::banana::tada:" + 
+    ":the_horns::sunglasses::the_horns::tada::banana::banana::banana::banana::apple::peach::banana:" + 
+    ":pear::green_apple:\n\n:green_apple::pear::banana::peach::apple: The Snacks have arrived in Stotters" + 
+    " House! :apple::peach::banana::pear::green_apple:\n\n:green_apple::pear::banana::peach::apple::banana:" + 
+    ":banana::banana::banana::tada::the_horns::sunglasses::the_horns::tada::banana::banana::banana::banana:" + 
+    ":apple::peach::banana::pear::green_apple:"
 
 app.get("/snack", function(req, res) {
         // define channel, where bot exist. You can adjust it there https://my.slack.com/services  
