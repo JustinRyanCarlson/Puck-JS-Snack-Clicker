@@ -5,7 +5,7 @@ var SlackBot = require('slackbots');
 
 // Create bot 
 var bot = new SlackBot({
-    token: 'xoxb-233947548631-wxkOp6HAn4MS88iOV27sISdl', 
+    token: 'xoxb-233947548631-0VKMbPBTiUpOIt0clnzsEjUA', 
     name: "Snacky Snackerton"
 });
 
@@ -21,7 +21,7 @@ app.get("/", function(req, res) {
 
 app.get("/snack", function(req, res) {
         // define channel, where bot exist. You can adjust it there https://my.slack.com/services  
-        bot.postMessageToChannel('snackbottest', 'Snacks are in the house!', params);
+        bot.postMessageToChannel('snackbottest', 'test alpha', params);
         
         // define existing username instead of 'user_name' 
         bot.postMessageToUser('justin.carlson', 'Snack notifications sent successfully', params); 

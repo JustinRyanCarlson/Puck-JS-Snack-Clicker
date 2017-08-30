@@ -52,7 +52,6 @@
         
       #buttonId {
         font-family: 'Roboto', sans-serif;
-        padding: 15px;
         height: 180px;
         width: 180px;
         border-radius: 50%;
@@ -90,7 +89,7 @@
  </head>
  <body>
   <div class="container">
-    <img src="images/dialogtech_logo.png" alt="">
+    <img src="/images/dialogtech_logo.png" alt="">
     <!--<h1>DialogTech Snack Button</h1>-->
     <h3>Click the connect button below to connect to the Puck.js button - Once connected, if the puck.js button is clicked, a snack refill slack notification will be sent to all DialogTech employees.</h3>
     <hr>
@@ -109,6 +108,8 @@
 
     $(document).ready(function() {
       var path = document.getElementsByTagName('button')[0];
+      var button = document.getElementById("buttonId");
+      
 
       // When clicked, connect or disconnect
       var connection;
@@ -116,29 +117,31 @@
         if (connection) {
           connection.close();
           connection = undefined;
+          button.innerHTML = "CONNECT";
+          button.classList.remove('successClass');
+          button.classList.add('standardClass');
         }
         Puck.connect(function(c) {
           if (!c) {
             alert("Couldn't connect!");
             return;
           }
+          button.innerHTML = "CONNECTED";
+          button.classList.remove('standardClass');
+          button.classList.add('successClass');
+
           connection = c;
 
-          var buf = "";
           connection.on("data", function(data) {
-              console.log(data);
+              console.log("test area:" + data);
 
-              $.get("/snack", function() {
-                console.log("/snacks attempted!");
-              });
-
-              // $('#buttonId').removeClass('standardClass').addClass('successClass');
-              // setTimeout( function(){
-              //   var button = document.getElementById("buttonId");
-              //   button.classList.remove('standardClass');
-              //   button.classList.add('successClass');
-              // }, 2000);
-
+              if (data == 1) {
+                console.log("condition met!");
+                
+                $.get("/snack", function() {
+                  console.log("/snacks attempted!");
+                });
+              }
           });
           
           // First, reset Puck.js
@@ -147,7 +150,7 @@
             setTimeout(function() {
               // Now tell it to write data on the current light level to Bluetooth
               // 10 times a second
-              connection.write("setInterval(function() {\nif (digitalRead(BTN)) Bluetooth.println('click');\n}, 200);\n",
+              connection.write("setInterval(function() {\nif (digitalRead(BTN)) Bluetooth.println(1);\n}, 200);\n",
                 function() { console.log("Ready..."); });
             }, 1500);
           });
