@@ -7,19 +7,14 @@ app.use(express.static(path.join(__dirname, 'static_files')));
 
 // Create bot 
 var bot = new SlackBot({
-    token: 'xoxb-233947548631-SRDe0EeX2FD5xqRWzfUKzJuW', 
+    token: 'xoxb-233947548631-kHjbKNcyCq1r5fBECtyd7cPq', 
     name: "Snacky Snackerton"
 });
 
-// more information about additional params https://api.slack.com/methods/chat.postMessage 
+// params for bot
 var params = {
     icon_emoji: ':dt:'
 };
-
-// Set up a URL route
-app.get("/", function(req, res) {
- res.sendFile(path.join(__dirname + '/index.html'));
-});
 
 var slackMessage = ":green_apple::pear::banana::peach::apple::banana::banana::banana::banana::tada:" + 
     ":the_horns::sunglasses::the_horns::tada::banana::banana::banana::banana::apple::peach::banana:" + 
@@ -28,22 +23,34 @@ var slackMessage = ":green_apple::pear::banana::peach::apple::banana::banana::ba
     ":banana::banana::banana::tada::the_horns::sunglasses::the_horns::tada::banana::banana::banana::banana:" + 
     ":apple::peach::banana::pear::green_apple:"
 
-app.get("/snack", function(req, res) {
-        // define channel, where bot exist. You can adjust it there https://my.slack.com/services  
-        bot.postMessageToChannel('snackbottest', slackMessage, params);
-        
-        // define existing username instead of 'user_name' 
-        bot.postMessageToUser('justin.carlson', 'Snack notifications sent successfully', params); 
+// Set up a URL routes
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
 
-        res.status(200).send("success");
+app.get("/snack9", function(req, res) {
+    // post to channel for workers on floor 9
+    bot.postMessageToChannel('snackbottest', slackMessage, params);
+
+    res.status(200).send("success");
+})
+
+app.get("/snack11", function(req, res) {
+        // ost to channel for workers on floor 11 
+    bot.postMessageToChannel('snackbottest', slackMessage, params);
+        
+        // CHANGEME to brooke
+    bot.postMessageToUser('justin.carlson', 'Snack notifications sent successfully', params); 
+
+    res.status(200).send("success");
 })
 
 app.get("/battery", function(req, res) {        
-        // define existing username instead of 'user_name' 
-        bot.postMessageToUser('justin.carlson', ':battery: Puck battery low :battery:', params); 
-        bot.postMessageToUser('tristanmarshall', 'Puck battery low', params); 
+    // define existing username instead of 'user_name' 
+    bot.postMessageToUser('justin.carlson', ':battery: Puck battery low :battery:', params); 
+    bot.postMessageToUser('tristanmarshall', 'Puck battery low', params); 
 
-        res.status(200).send("success");
+    res.status(200).send("success");
 })
 
 // bind the app to listen for connections on a specified port
