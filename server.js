@@ -13,7 +13,7 @@ var bot = new SlackBot({
 
 // params for bot
 var params = {
-    icon_emoji: ':chocolate_bar:'
+    icon_emoji: ':popcorn:'
 };
 
 var slackMessage = ":green_apple::pear::banana::peach::apple::banana::banana::banana::banana::tada:" + 
@@ -30,14 +30,14 @@ app.get("/", function(req, res) {
 
 app.get("/snack9", function(req, res) {
     // post to channel for workers on floor 9
-    bot.postMessageToChannel('snacks_9th_floor', slackMessage, params);
+    bot.postMessageToChannel('snacks_9th', slackMessage, params);
 
     res.status(200).send("success");
 })
 
 app.get("/snack11", function(req, res) {
-    // ost to channel for workers on floor 11 
-    bot.postMessageToChannel('snacks_11th_floor', slackMessage, params);
+    // post to channel for workers on floor 11 
+    bot.postMessageToChannel('snacks_11th', slackMessage, params);
         
     // CHANGEME to brooke
     bot.postMessageToUser('justin.carlson', 'Snack notifications sent successfully', params); 
