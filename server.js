@@ -8,12 +8,12 @@ app.use(express.static(path.join(__dirname, 'static_files')));
 // Create bot 
 var bot = new SlackBot({
     token: 'xoxb-233947548631-kHjbKNcyCq1r5fBECtyd7cPq', 
-    name: "Snacky Snackerton"
+    name: "Mr. Snacks"
 });
 
 // params for bot
 var params = {
-    icon_emoji: ':dt:'
+    icon_emoji: ':chocolate_bar:'
 };
 
 var slackMessage = ":green_apple::pear::banana::peach::apple::banana::banana::banana::banana::tada:" + 
@@ -30,16 +30,16 @@ app.get("/", function(req, res) {
 
 app.get("/snack9", function(req, res) {
     // post to channel for workers on floor 9
-    bot.postMessageToChannel('snackbottest', slackMessage, params);
+    bot.postMessageToChannel('snacks_9th_floor', slackMessage, params);
 
     res.status(200).send("success");
 })
 
 app.get("/snack11", function(req, res) {
-        // ost to channel for workers on floor 11 
-    bot.postMessageToChannel('snackbottest', slackMessage, params);
+    // ost to channel for workers on floor 11 
+    bot.postMessageToChannel('snacks_11th_floor', slackMessage, params);
         
-        // CHANGEME to brooke
+    // CHANGEME to brooke
     bot.postMessageToUser('justin.carlson', 'Snack notifications sent successfully', params); 
 
     res.status(200).send("success");
