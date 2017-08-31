@@ -7,7 +7,7 @@ app.use(express.static(path.join(__dirname, 'static_files')));
 
 // Create bot 
 var bot = new SlackBot({
-    token: 'xoxb-233947548631-rxea72smzCImihmnRcqWTwYe', 
+    token: 'xoxb-233947548631-8l7O78ESoxm4mdPE3DzantJX', 
     name: "Snacky Snackerton"
 });
 
