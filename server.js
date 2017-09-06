@@ -26,14 +26,14 @@ app.get("/", function(req, res) {
 
 app.get("/snack9", function(req, res) {
     // post to channel for workers on floor 9
-    slack.sendMsg("snacks_9th", slackMessage);
+    slack.sendMsg("C6WJF8CJX", slackMessage);
 
     res.status(200).send("success");
 })
 
 app.get("/snack11", function(req, res) {
     // post to channel for workers on floor 11 
-    slack.sendMsg("snacks_11th", slackMessage);
+    slack.sendMsg("C6WLN7CR0", slackMessage);
 
     // post msg to Brooke 
     slack.sendPM("brooke", "Snack notification sent sucessfully");
