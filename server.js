@@ -7,7 +7,7 @@ app.use(express.static(path.join(__dirname, 'static_files')));
 
 // Starting bot connection
 var slack = new slackAPI({
-    'token': 'xoxb-233947548631-NBW0FzAPtW05mFytaQO9hFWR',
+    'token': 'xoxb-233947548631-kmk5wzno5hThEeudcZIFVnZK',
     'logging': true,
     'autoReconnect': true
 });
