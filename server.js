@@ -7,7 +7,7 @@ app.use(express.static(path.join(__dirname, 'static_files')));
 
 // Starting bot connection
 var slack = new slackAPI({
-    'token': 'xoxb-233947548631-Ku5se06wH4V41H87E1UQn8VT',
+    'token': 'xoxb-233947548631-NBW0FzAPtW05mFytaQO9hFWR',
     'logging': true,
     'autoReconnect': true
 });
@@ -26,25 +26,25 @@ app.get("/", function(req, res) {
 
 app.get("/snack9", function(req, res) {
     // post to channel for workers on floor 9
-    slack.sendMsg('snacks_9th', slackMessage);
+    slack.sendMsg("snacks_9th", slackMessage);
 
     res.status(200).send("success");
 })
 
 app.get("/snack11", function(req, res) {
     // post to channel for workers on floor 11 
-    slack.sendMsg('snacks_11th', slackMessage);
+    slack.sendMsg("snacks_11th", slackMessage);
 
     // post msg to Brooke 
-    slack.sendPM('brooke', 'Snack notification sent sucessfully');
+    slack.sendPM("brooke", "Snack notification sent sucessfully");
         
     res.status(200).send("success");
 })
 
 app.get("/battery", function(req, res) {        
     // send notification to Tristan and I that the battery is low
-    slack.sendPM('justin.carlson', 'Puck battery low');
-    slack.sendPM('tristanmarshall', 'Puck battery low');
+    slack.sendPM("justin.carlson", "Puck battery low");
+    slack.sendPM("tristanmarshall", "Puck battery low");
 
     res.status(200).send("success");
 })
